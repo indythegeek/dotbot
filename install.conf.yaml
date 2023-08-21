@@ -2,6 +2,7 @@
 
 - link:
     ~/.gitconfig: gitconfig
+    ~/.gitignore: gitignore
     ~/.zshrc: zshrc
     ~/bin:
         path: bin/
