@@ -14,3 +14,5 @@
     s = status -s
     annotate = blame
     praise = blame
+[core]
+    excludesfile = /Users/indy/.gitignore
