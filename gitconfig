@@ -1,0 +1,16 @@
+# Yo dawg, I heard you like git, so we put your global git config in git </xzbit>
+
+[user]
+    name = indythegeek
+    email = msiverd@alum.mit.edu
+
+[push]
+    default = matching
+
+[color]
+    status = auto
+
+[alias]
+    s = status -s
+    annotate = blame
+    praise = blame
