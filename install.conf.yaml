@@ -2,6 +2,7 @@
 
 - link:
     ~/.gitconfig: gitconfig
+    ~/.zshrc: zshrc
     ~/bin:
         path: bin/
         create: true
