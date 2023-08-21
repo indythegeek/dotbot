@@ -2,5 +2,8 @@
 
 - link:
     ~/.gitconfig: gitconfig
+    ~/bin:
+        path: bin/
+        create: true
 
 
