@@ -4,6 +4,7 @@
     ~/.gitconfig: gitconfig
     ~/.gitignore: gitignore
     ~/.zshrc: zshrc
+    ~/.oh-my-zsh: oh-my-zsh
     ~/bin:
         path: bin/
         create: true
