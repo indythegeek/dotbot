@@ -1,0 +1,11 @@
+# custom files (all customizations should be in the main tree, don't keep them local or aside
+custom/
+
+# temp files directories
+cache/
+log/
+*.swp
+.DS_Store
+
+#editor configs
+.vscode
