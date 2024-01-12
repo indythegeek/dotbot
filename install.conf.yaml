@@ -5,6 +5,7 @@
     ~/.gitignore: gitignore
     ~/.zshrc: zshrc
     ~/.oh-my-zsh: oh-my-zsh
+    ~/.p10k.zsh: p10k.zsh
     ~/bin:
         path: bin/
         create: true
