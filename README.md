@@ -2,15 +2,15 @@
 Indy's public dotfiles managed by dotbot. Feel free to steal, let me know if you are just to amuse myself
 
 ## Software I'm using
- * dotbot source
-   * https://github.com/anishathalye/dotbot
- * User created dotbot bootstrap
-   * https://github.com/Vaelatern/init-dotfiles
  * Oh-my-zsh as an archive/import, so I can put git submodules inside
    * Native plugins for git and substring history
    * A theme called indy2line that I gave up for p10k
- * powerlevel highlighting - git submodule as omz theme
-   * https://github.com/romkatv/powerlevel10k
+ * powerlevel highlighting - git submodule in the omz theme directory
+    * https://github.com/romkatv/powerlevel10k
+ * dotbot source (as gitsubmodule)
+   * https://github.com/anishathalye/dotbot
+ * User created dotbot bootstrap
+   * https://github.com/Vaelatern/init-dotfiles
  * syntax highlighting - git submodule as omz plugin
    * https://github.com/zsh-users/zsh-syntax-highlighting
  * ITerm2 intergration
