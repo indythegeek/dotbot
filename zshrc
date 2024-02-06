@@ -34,7 +34,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#ZSH_THEME="robbyrussell"
+#ZSH_THEME="indy2line"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 export ITERM2_SQUELCH_MARK=1
 test -e ~/.dotfiles/iterm2_shell_integration.zsh && source ~/.dotfiles/iterm2_shell_integration.zsh || true
