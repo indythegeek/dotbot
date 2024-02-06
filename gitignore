@@ -1,6 +1,3 @@
-# Ignore locally installed binaries
-bin/yt-dlp
-
 # General
 .DS_Store
 .AppleDouble
