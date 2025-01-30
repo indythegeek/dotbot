@@ -9,7 +9,7 @@ fi
 export PATH="$PATH:/Users/indy/bin"
 
 # Find homebrew binaries
-[[ ! -f /opt/homebrew/bin/brew ]] || eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 ### zsh shell completion for subcommands of brew
 # For now, before I install oh-my-zsh
