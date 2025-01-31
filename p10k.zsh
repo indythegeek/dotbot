@@ -190,6 +190,9 @@
 
   #################################[ os_icon: os identifier ]##################################
   # OS identifier color.
+  #typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=232
+  [[ `uname` == "Darwin" ]] && typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=232
+  [[ `uname` == "Linux" ]] && typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=7
   #typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=7
   [[ `uname` == "Darwin" ]] && typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=7
   [[ `uname` == "Linux" ]] && typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=166
