@@ -191,7 +191,9 @@
   #################################[ os_icon: os identifier ]##################################
   # OS identifier color.
   typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=232
-  typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=7
+  #typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=7
+  [[ `uname` == "Darwin" ]] && typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=7
+  [[ `uname` == "Linux" ]] && typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=166
   # Custom icon.
   # typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION='⭐'
 
@@ -220,7 +222,9 @@
 
   ##################################[ dir: current directory ]##################################
   # Current directory background color.
-  typeset -g POWERLEVEL9K_DIR_BACKGROUND=4
+  #typeset -g POWERLEVEL9K_DIR_BACKGROUND=4
+  [[ `uname` == "Darwin" ]] && typeset -g POWERLEVEL9K_DIR_BACKGROUND=4
+  [[ `uname` == "Linux" ]] && typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=91
   # Default current directory foreground color.
   typeset -g POWERLEVEL9K_DIR_FOREGROUND=254
   # If directory is too long, shorten some of its segments to the shortest possible unique
@@ -970,12 +974,27 @@
   typeset -g POWERLEVEL9K_CONTEXT_FOREGROUND=3
   typeset -g POWERLEVEL9K_CONTEXT_BACKGROUND=0
 
+if [ "$(hostname -f)" = "rigoletto.siverd.com" ]; then
+    SHORTHOST="rigo"
+else
+    SHORTHOST="$(hostname)"
+fi
+
+if [ "$(whoami)" = "msiverd" ]; then
+    SHORTUSER="ms"
+else
+    SHORTUSER="$(whoami)"
+fi
+
   # Context format when running with privileges: user@hostname.
-  typeset -g POWERLEVEL9K_CONTEXT_ROOT_TEMPLATE='%n@%m'
+  #typeset -g POWERLEVEL9K_CONTEXT_ROOT_TEMPLATE='%n@%m'
+  typeset -g POWERLEVEL9K_CONTEXT_ROOT_TEMPLATE="${SHORTUSER}@${SHORTHOST}"
   # Context format when in SSH without privileges: user@hostname.
-  typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_TEMPLATE='%n@%m'
+  #typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_TEMPLATE='%n@%m'
+  typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_TEMPLATE="${SHORTUSER}@${SHORTHOST}"
   # Default context format (no privileges, no SSH): user@hostname.
-  typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE='%n@%m'
+  #typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE='%n@%m'
+  typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE="${SHORTUSER}@${SHORTHOST}"
 
   # Don't show context unless running with privileges or in SSH.
   # Tip: Remove the next line to always show context.
@@ -1747,7 +1766,9 @@
   ####################################[ time: current time ]####################################
   # Current time color.
   typeset -g POWERLEVEL9K_TIME_FOREGROUND=0
-  typeset -g POWERLEVEL9K_TIME_BACKGROUND=7
+  #typeset -g POWERLEVEL9K_TIME_BACKGROUND=7
+  [[ `uname` == "Darwin" ]] && typeset -g POWERLEVEL9K_TIME_BACKGROUND=7
+  [[ `uname` == "Linux" ]] && typeset -g POWERLEVEL9K_TIME_BACKGROUND=166
   # Format for the current time: 09:51:02. See `man 3 strftime`.
   typeset -g POWERLEVEL9K_TIME_FORMAT='%D{%H:%M}'
   # If set to true, time will update when you hit enter. This way prompts for the past
