@@ -190,7 +190,6 @@
 
   #################################[ os_icon: os identifier ]##################################
   # OS identifier color.
-  typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=232
   #typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=7
   [[ `uname` == "Darwin" ]] && typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=7
   [[ `uname` == "Linux" ]] && typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=166
@@ -224,7 +223,7 @@
   # Current directory background color.
   #typeset -g POWERLEVEL9K_DIR_BACKGROUND=4
   [[ `uname` == "Darwin" ]] && typeset -g POWERLEVEL9K_DIR_BACKGROUND=4
-  [[ `uname` == "Linux" ]] && typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=91
+  [[ `uname` == "Linux" ]] && typeset -g POWERLEVEL9K_DIR_BACKGROUND=91
   # Default current directory foreground color.
   typeset -g POWERLEVEL9K_DIR_FOREGROUND=254
   # If directory is too long, shorten some of its segments to the shortest possible unique
