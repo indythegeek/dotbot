@@ -977,7 +977,7 @@
 if [ "$(hostname -f)" = "rigoletto.siverd.com" ]; then
     SHORTHOST="rigo"
 elif [ "$(hostname -f)" = "carmen.local" ]; then
-    SHORTHOST="carmen"
+    SHORTHOST="car"
 elif [ "$(hostname -f)" = "bess.local" ]; then
     SHORTHOST="bess"
 else
