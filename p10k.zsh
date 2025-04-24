@@ -976,14 +976,18 @@
 
 if [ "$(hostname -f)" = "rigoletto.siverd.com" ]; then
     SHORTHOST="rigo"
-else
-    SHORTHOST="$(hostname)"
+elif [ "$(hostname -f)" = "carmen.local" ]; then
+    SHORTHOST="carmen"
+elif [ "$(hostname -f)" = "bess.local" ] && [ "$(whoami)" = "aphacker" ]; then
+    SHORTHOST="bess"
 fi
 
 if [ "$(whoami)" = "msiverd" ]; then
     SHORTUSER="ms"
-else
-    SHORTUSER="$(whoami)"
+elif [ "$(whoami)" = "indy" ] && [ "$(hostname -f)" = "carmen.local" ]; then
+    SHORTUSER="in"
+elif [ "$(whoami)" = "aphacker" ]; then
+    SHORTUSER="ap"
 fi
 
   # Context format when running with privileges: user@hostname.
@@ -998,7 +1002,7 @@ fi
 
   # Don't show context unless running with privileges or in SSH.
   # Tip: Remove the next line to always show context.
-  typeset -g POWERLEVEL9K_CONTEXT_{DEFAULT,SUDO}_{CONTENT,VISUAL_IDENTIFIER}_EXPANSION=
+  #typeset -g POWERLEVEL9K_CONTEXT_{DEFAULT,SUDO}_{CONTENT,VISUAL_IDENTIFIER}_EXPANSION=
 
   # Custom icon.
   # typeset -g POWERLEVEL9K_CONTEXT_VISUAL_IDENTIFIER_EXPANSION='⭐'
