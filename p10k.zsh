@@ -978,16 +978,22 @@ if [ "$(hostname -f)" = "rigoletto.siverd.com" ]; then
     SHORTHOST="rigo"
 elif [ "$(hostname -f)" = "carmen.local" ]; then
     SHORTHOST="carmen"
-elif [ "$(hostname -f)" = "bess.local" ] && [ "$(whoami)" = "aphacker" ]; then
+elif [ "$(hostname -f)" = "bess.local" ]; then
     SHORTHOST="bess"
+else
+    SHORTHOST="$(hostname -s)"
 fi
 
-if [ "$(whoami)" = "msiverd" ]; then
+if [ "$(whoami)" = "msiverd" ] && [ "$(hostname -f)" = "rigoletto.siverd.com" ]; then
     SHORTUSER="ms"
 elif [ "$(whoami)" = "indy" ] && [ "$(hostname -f)" = "carmen.local" ]; then
     SHORTUSER="in"
+elif [ "$(whoami)" = "msiverd" ]; then
+    SHORTUSER="ms"
 elif [ "$(whoami)" = "aphacker" ]; then
     SHORTUSER="ap"
+else
+    SHORTUSER="$(whoami)"
 fi
 
   # Context format when running with privileges: user@hostname.
