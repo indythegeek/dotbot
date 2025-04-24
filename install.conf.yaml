@@ -8,4 +8,4 @@
     ~/.p10k.zsh: p10k.zsh
 
 - shell:
-    - [git submodule update --init --recursive, Install/Updating submodules]
+    - [git submodule update --init --recursive --progress, Install/Updating submodules]
