@@ -136,6 +136,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # This made it easy for me to customize my zsh colors
 alias makecolors='for i in {0..255}; do print -Pn "%K{$i} %k%F{$i} ${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$\'\\n'}; done'
+# Basic ssh proxy. I have password login disabled on this server you vultures, so don't even try
+alias tun="killall -v autossh; autossh -f -M 0 -NT -o ServerAliveInterval=10 -o ServerAliveCountMax=3 -i /Users/indy/.ssh/t_rigo_id_rsa -D 2222 -N t@rigoletto.siverd.com; ps auxww | grep -v grep | grep autossh"
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
