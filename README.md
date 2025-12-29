@@ -22,8 +22,6 @@ Indy's public dotfiles managed by dotbot. Feel free to steal, let me know if you
 
  * Command-line fuzzy finder
    * https://github.com/junegunn/fzf
- * Bring in my old `.screenrc` and `.vimrc`
-   * Some of that stuff is still in the previos repo [indythegeek/dotfiles](https://github.com/indythegeek/dotfiles)
  * Use grc for command highlights
  * Audit previous setups `~/git/dotfiles-migration`
  * Bring in my personal VSCode config

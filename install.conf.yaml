@@ -14,6 +14,8 @@
     # create .ssh dir before this symlink
     # I'm using keylogin only on these servers you internet script kiddies so fuck off
     ~/.ssh/config: ssh/config
+    ~/.vimrc: vimrc
+    ~/.screenrc: screenrc
 
 - shell:
     - [git submodule update --init --recursive --progress, Install/Updating submodules]

@@ -1,0 +1,126 @@
+################################################################################
+#
+# Indy's .screen file
+#
+
+################################################################################
+#
+# Escape sequences. Friends don't let friends use CTL-A
+
+# Replace CTL-A with CTL-J
+
+# makes the actual escape ctl-j
+escape ^jj
+# clear ctl-a
+bind ^a
+
+################################################################################
+#
+# Captions and hardstatus. Makes it looks like you have a tabbed terminal
+# and puts useful info into the title of your terminal
+
+# The main hack is dynamic terminal titles and psuedo tabs for now.
+# There are some other nice tricks, especially with zsh.
+
+hardstatus lastline "%-Lw(%n%f %t)%+Lw / %H"
+caption always "%{= yk} %-Lw%{= ck}%n%f %t%{-}%+Lw %=%{= mk} %?multi: you,%u@%?%H "
+shelltitle "vt"
+
+# Explanation of all that formatting nonsense:
+
+# The %{= xx} is color changing
+
+# This is a breakdown of my custom caption
+# ' %w '      space, slick list-o-windows, space
+# '%? @%u%?'  %u is all other users of this window.
+#              If %u has value,  then print
+#                 at symbol, all other users
+#              otherwise, print nothing.
+#
+# '%? [%h]%?' %h is the hardstatus of this window
+#              If %h has value,  then print
+#                 space, left bracket, hardstatus, right bracket
+#              otherwise, print nothing.
+#
+# '%='         pad out as much space as possible
+# '%H '       system hostname, space
+
+# I'd like to get session name too, but 1) there is no var 2) I can't
+# figure out how to write a shell script that will determine the
+# running session by "backtick" command.
+# There may be a way to do this with backtick escapes.
+#
+# See the bottom of this file for my breakdown of a sensible original
+# recommended caption without the color shit.
+
+################################################################################
+#
+# Other settings
+
+# no audible bell, please
+# Tired of Wuff, so added custom vbell
+vbell on
+vbell_msg "Dude! Dude! ... beep."
+
+# detach on hangup
+autodetach on
+
+# don't display the copyright page
+startup_message off
+
+# emulate .logout message
+# pow_detach_msg "Screen session of \$LOGNAME \$:cr:\$:nl:ended. Have a nice day."
+pow_detach_msg "Here endeth the screen session. Go forth! Be merry!"
+
+# Increase scrollback
+
+defscrollback 10000
+
+################################################################################
+#
+# other keybindings
+
+# remove some stupid / dangerous key bindings
+bind k
+bind ^k
+bind .
+bind ^\
+bind \\
+bind ^h
+bind h
+# make them better
+bind 'K' kill
+bind 'I' login on
+bind 'O' login off
+bind '}' history
+
+# Prepend/append register [/] to the paste if ^a^] is pressed.
+# This lets me have autoindent mode in vi.
+register [ "\033:se noai\015a"
+register ] "\033:se ai\015a"
+bind ^] paste [.]
+
+
+################################################################################
+#
+# Original recommended caption without all the color shit.
+
+#caption always "%3n %t%? @%u%?%? [%h]%?%=%c"
+#hardstatus alwaysignore
+#hardstatus alwayslastline "%Lw"
+#
+##  Breakdown
+## '%3n'       Three digit number of window
+## ' %t'       space, then window title.
+## '%? @%u%?'  %u is all other users of this window.
+##              If %u has value,  then print
+##                 at symbol, all other users
+##              otherwise, print nothing.
+##
+## '%? [%h]%?' %h is the hardstatus of this window
+##              If %h has value,  then print
+##                 space, left bracket, hardstatus, right bracket
+##              otherwise, print nothing.
+##
+## '='         pad out as much space as possible
+## '%c'        current time HH:MM in 24h format
