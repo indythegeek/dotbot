@@ -1,11 +1,19 @@
 - clean: ['~']
 
+- create:
+    # Do ssh dir creation/verification before symlink below
+    ~/.ssh:
+      mode: 0700
+
 - link:
     ~/.gitconfig: gitconfig
     ~/.gitignore: gitignore
     ~/.zshrc: zshrc
     ~/.oh-my-zsh: oh-my-zsh
     ~/.p10k.zsh: p10k.zsh
+    # create .ssh dir before this symlink
+    # I'm using keylogin only on these servers you internet script kiddies so fuck off
+    ~/.ssh/config: ssh/config
 
 - shell:
     - [git submodule update --init --recursive --progress, Install/Updating submodules]
