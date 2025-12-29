@@ -1,17 +1,17 @@
 host crock
 	HostName alumxi.webfactional.com
 	User thecrock
-        # I'm using keylogin only on this server you internet script kiddies so fuck off
+    # I'm using keylogin only on this server you internet script kiddies so fuck off
 	IdentityFile ~/.ssh/id_rsa_crock.alumxi.com
 
 host rigo rigoletto
 	HostName piwigo.indy.wtf
-        User msiverd
-        # I'm using keylogin only on this server you internet script kiddies so fuck off
+    User msiverd
+    # I'm using keylogin only on this server you internet script kiddies so fuck off
 	IdentityFile ~/.ssh/id_ecdsa
 
 host carmen carmen.local
 	HostName carmen.local
-        User indy
-        # I'm using keylogin only on this server you internet script kiddies so fuck off
+    User indy
+    # I'm using keylogin only on this server you internet script kiddies so fuck off
 	IdentityFile ~/.ssh/id_ecdsa
