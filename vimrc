@@ -35,3 +35,6 @@ if has('statusline')
   set statusline+=%{w:file_perm}\ \             " show fileperms
   set statusline+=%-7.(%l,%c%V%)\ %<%P          " cursor position/offset
 endif
+
+" Prevents double indenting when pasting
+set paste
